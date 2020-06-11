@@ -1,38 +1,103 @@
-.App {
+.app {
+  height: 100%;
+  padding: 2rem 4rem;
+  overflow: scroll;
+}
+
+.app header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app main {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
+  margin-top: 2rem;
+}
+
+.field-username {
+  width: 15rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.submit {
+  width: 15rem;
+  margin-top: 1rem;
+}
+
+.input-area,
+.output-area {
+  font-size: 1.8rem;
+  line-height: 4rem;
+}
+
+.output-area {
+  width: 100%;
+  margin-top: 4rem;
+  flex: 1;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.message-area {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  height: 6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
+.message-failure {
+  color: red;
+}
+
+.message-success {
+  color: green;
+}
+
+.repo-row {
+  display: flex;
+  justify-content: center;
+}
+
+.repo-row > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 35rem;
+  margin-left: 10rem;
+}
+
+.repo-row > *:first-child {
+  margin-left: 0;
+}
+
+.repo-list-container {
+  width: 100%;
+}
+
+.output-status-text,
+.repo-amount {
+  text-align: center;
+}
+
+.circle {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  border-top: 5px solid rgb(66, 168, 236);
+  animation: animate 1s linear infinite;
+  filter: blur(1px);
+}
+
+@keyframes animate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }

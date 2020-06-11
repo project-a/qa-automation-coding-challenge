@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# QA Automation Coding Challenge
 
-## Available Scripts
+Thank you for taking the time to complete this challenge!
 
-In the project directory, you can run:
+This repo consists of a basic working app for which you are requested to setup a simple testing infrastructure, extract the main user flows, and implement tests.
 
-### `yarn start`
+Please read below for the context and instructions.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Why
 
-### `yarn test`
+Adam runs his own web development school, in which he teaches the fundamentals of the web to his students, over the course of several months.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Adam wishes to maintain an easy overview of the progress of his students. He wants to be able to quickly get a simple list of repos owned by a given student, and see the most basic details of each repo. He also wants to be able to easily navigate to a specific repo, in case he needs to dive deeper.
 
-### `yarn build`
+Adam likes Github, but the UI is not built for a minimalistic, non-paginated overview of repos. For this he decides to build his own simple app, leveraging the Github API. He defines the following specifications:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Acceptance Criteria
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. The UI consists of a header, a search form and a search result section
+2. The header displays the title of the app
+3. The search form accepts a text input as a search term. Search is activated by clicking the "Go" button, or by pressing the "Enter" key
+4. For each repo found, the search result section displays a row with basic info about that repo: name and description. Clicking on the repo name takes the user to the repo's URL. In case of a missing value, `–` is displayed
+5. The user sees feedback about the result of the search action. Either a success or error message are shown above the search field at the completion of a search action, for a short amount of time. If the error is due to a user not found on Github, a specific error message is displayed. Otherwise, a generic error message is displayed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Here is where you come in...
 
-### `yarn eject`
+Adam has finished a first version of the app. It meets the requirements and serves him nicely, but is still very basic.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+He would like to enhance the app over time in iterations, adding more features. To do that well, he decides he needs confidence to continuously enhance the app without breaking it or losing one of the fundamental requirements.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Help Adam gain confidence in further development by automatically testing the most critical features of the app, by doing the following:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Fork the repository, setup and run the app (see [setup](./setup.md) file for instructions)
+2. Using the product description, acceptance criteria and the app itself, compile a list of several testable user flows, cases or scenarios. This doesn't have to cover every possible real-life case, please focus on what you think is most fundamental
+3. Based on your assessment of importance and effort, prioritise this list. Imagine this list would be later converted to tickets to be tackled in the next few work iterations of a product development team. Please explain your reasoning briefly. Add this list and your reasoning to the empty [`testable-flows.md`](./testable-flows.md) file
+4. Out of these flows, choose two and implement tests for them
+5. Add to this `README.md` file (or in a separate file) instructions on how to run these tests
 
-## Learn More
+### Things to note
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use any testing technology you'd like – Cypress, Selenium or any other you think would work well
+- Feel free to modify or add whatever you need including addition of other packages, your own libraries, etc
+- Please submit a link to your finished repository when you are ready
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Good luck and happy coding! :)
