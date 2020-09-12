@@ -102,28 +102,28 @@ function App() {
         <form className="input-area">
           <div className="field-username">
             <label htmlFor="username">Github Username</label>
-            <input id="username" onChange={handleChange}></input>
+            <input id="username" data-testid="usernameInput" onChange={handleChange}/>
           </div>
 
-          <button className="submit" type="submit" onClick={handleSubmit}>
+          <button className="submit" type="submit" data-testid="submitButton" onClick={handleSubmit}>
             Go
           </button>
         </form>
 
         <section className="output-area">
           {dataState === LOADING_STATE.LOADING && (
-            <div className="circle"></div>
+            <div className="circle"/>
           )}
           {dataState === LOADING_STATE.IDLE && !repos.length && (
-            <p className="output-status-text">No repos</p>
+            <p className="output-status-text" data-testid="noRepositoriesMessage">No repos</p>
           )}
           {dataState === LOADING_STATE.IDLE && repos.length > 0 && (
             <div className="repo-list-container">
               <p className="repo-amount">Found {repos.length} Repos</p>
               <ul>
                 {repos &&
-                  repos.map(({ id, name, description, html_url }) => (
-                    <li className="repo-row" key={id}>
+                  repos.map(({ id, name, description, html_url }, index) => (
+                    <li className="repo-row" key={id} data-testid={`repository-${index}`}>
                       <p>
                         <a
                           href={html_url}
