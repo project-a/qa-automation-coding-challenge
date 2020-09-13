@@ -1,11 +1,11 @@
 import {v4} from "uuid";
-
-const playwright = require('playwright');
 import {Browser, Page} from "playwright";
 import {expect} from "chai";
 import {MainPage} from "../page/mainPage";
 import {feature, story} from "../report/allureReportWrapper";
 import {config} from "../config/config";
+
+const playwright = require('playwright');
 
 describe('Get Github Repos web site', () => {
     let mainPage: MainPage;
