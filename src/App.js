@@ -87,13 +87,13 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Get Github Repos</h1>
+        <h1 data-testid="header">Get Github Repos</h1>
       </header>
 
       <main>
         <section className="message-area">
           {message && (
-            <p className={`message-${message.type}`}>
+            <p className={`message-${message.type}`} data-testid="statusMessage">
               <strong>{message.message}</strong>
             </p>
           )}
@@ -112,29 +112,30 @@ function App() {
 
         <section className="output-area">
           {dataState === LOADING_STATE.LOADING && (
-            <div className="circle"/>
+            <div className="circle" data-testid="spinner"/>
           )}
           {dataState === LOADING_STATE.IDLE && !repos.length && (
             <p className="output-status-text" data-testid="noRepositoriesMessage">No repos</p>
           )}
           {dataState === LOADING_STATE.IDLE && repos.length > 0 && (
             <div className="repo-list-container">
-              <p className="repo-amount">Found {repos.length} Repos</p>
+              <p className="repo-amount" data-testid="repositoriesFoundMessage">Found {repos.length} Repos</p>
               <ul>
                 {repos &&
                   repos.map(({ id, name, description, html_url }, index) => (
-                    <li className="repo-row" key={id} data-testid={`repository-${index}`}>
+                    <li className="repo-row" key={id} data-testid="repositoryRow">
                       <p>
                         <a
                           href={html_url}
                           rel="noopener noreferrer"
                           target="_blank"
+                          data-testid="repositoryLink"
                         >
                           {name}
                         </a>
                       </p>
 
-                      <p className="repo-description">{description || '–'}</p>
+                      <p className="repo-description" data-testid="repositoryDescription">{description || '–'}</p>
                     </li>
                   ))}
               </ul>

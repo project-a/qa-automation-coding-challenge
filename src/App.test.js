@@ -25,7 +25,6 @@ test('renders no search results', () => {
   expect(getByText('No repos')).toBeInTheDocument();
 });
 
-//TODO might be a good idea to add mocked test
 test('renders search results', async () => {
   const { getByTestId, findByTestId } = render(<App />);
 
@@ -41,7 +40,7 @@ test('renders search results', async () => {
   fireEvent.change(searchBarElement, { target: { value: "oleg-toporkov" } });
   goButtonElement.click();
 
-  const firstRepository = await findByTestId("repository-0");
+  const firstRepository = await findByTestId("repositoryRow");
   const { getByText } = within(firstRepository);
 
   expect(firstRepository).toBeInTheDocument();

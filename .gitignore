@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 yarn.lock
-
 .idea
+
+*.png
+allure-report
+allure-results
