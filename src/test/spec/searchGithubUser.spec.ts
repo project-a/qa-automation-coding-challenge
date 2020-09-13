@@ -44,7 +44,7 @@ describe('Get Github Repos web site', () => {
         expect(repositoriesFoundMessage, 'Repositories found message text is incorrect')
             .to.be.equal('Found 10 Repos');
 
-        const repository5Link = await mainPage.resultsList.getRepositoryLinkText(5);
+        const repository5Link = await mainPage.resultsList.getRepositoryLinkText(5); // TODO well, not very good to rely on the order of repositories
         expect(repository5Link, 'Fifth repository link text is incorrect')
             .to.be.equal('qa-automation-coding-challenge');
 
